@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    height: 100vh;
+    padding: 20px;
+}
+
+.grid-item {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+}
+
+.subpage {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.arrow-button,
+.cross-button {
+    color: black;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-left: 5px; /* Add some space between buttons */
+}
+
+.arrow-button:hover,
+.cross-button:hover {
+    background-color: red;
+}
