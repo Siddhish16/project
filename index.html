@@ -7,14 +7,14 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="grid-container">
+    <!-- <div class="grid-container">
         <div class="grid-item">
             <div class="subpage">
                 <button class="arrow-button">&#8593;</button>
                 <button class="cross-button">&#10006;</button>
             </div>
         </div>
-        <!-- Repeat the structure for other grid items -->
+        
         <div class="grid-item">
             <div class="subpage">
                 <button class="arrow-button">&#8593;</button>
@@ -33,6 +33,85 @@
                 <button class="cross-button">&#10006;</button>
             </div>
         </div>
-    </div>
+    </div> -->
+
+
+
+    <main class="wrapper">
+  
+        <!-- Window -->
+        <section class="window is-focused" data-app="settings">
+          <nav class="window--menu">
+            <ul class="window--menu-container">
+              <li class="window--menu-item"><a class="window--menu-link window--menu-close js-close-window" href="javascript:void(0)"><i class="fa fa-times"></i></a></li>
+              <li class="window--menu-item"><a class="window--menu-link window--menu-expand js-expand-window" href="javascript:void(0)"><i class="fa fa-expand"></i></a></li>
+            </ul>
+            <span class="window--label">Settings</span>
+          </nav>
+          <section class="window--content">
+          </section>
+        </section>
+        <!-- /Window -->
+        
+        <!-- Window -->
+        <section class="window" data-app="calendar">
+          <nav class="window--menu">
+            <ul class="window--menu-container">
+              <li class="window--menu-item"><a class="window--menu-link window--menu-close js-close-window" href="javascript:void(0)"><i class="fa fa-times"></i></a></li>
+              <li class="window--menu-item"><a class="window--menu-link window--menu-expand js-expand-window" href="javascript:void(0)"><i class="fa fa-expand"></i></a></li>
+            </ul>
+            <span class="window--label">Calendar</span>
+          </nav>
+          <section class="window--content">
+          </section>
+        </section>
+        <!-- /Window -->
+        
+        <!-- Window -->
+        <section class="window" data-app="calculator">
+          <nav class="window--menu">
+            <ul class="window--menu-container">
+              <li class="window--menu-item"><a class="window--menu-link window--menu-close js-close-window" href="javascript:void(0)"><i class="fa fa-times"></i></a></li>
+              <li class="window--menu-item"><a class="window--menu-link window--menu-expand js-expand-window" href="javascript:void(0)"><i class="fa fa-expand"></i></a></li>
+            </ul>
+            <span class="window--label">Calculator</span>
+          </nav>
+          <section class="window--content">
+          </section>
+        </section>
+        <!-- /Window -->
+        
+        <!-- Window -->
+        <section class="window" data-app="terminal">
+          <nav class="window--menu">
+            <ul class="window--menu-container">
+              <li class="window--menu-item"><a class="window--menu-link window--menu-close js-close-window" href="javascript:void(0)"><i class="fa fa-times"></i></a></li>
+              <li class="window--menu-item"><a class="window--menu-link window--menu-expand js-expand-window" href="javascript:void(0)"><i class="fa fa-expand"></i></a></li>
+            </ul>
+            <span class="window--label">Terminal</span>
+          </nav>
+          <section class="window--content">
+          </section>
+        </section>
+        <!-- /Window -->
+        
+        
+        
+        <!-- Menu Bar -->
+        <section class="menu-bar menu-bar--anchor-btm">
+          <nav class="main-menu">
+            <ul class="main-menu--container">
+              <li class="main-menu--item"><a class="main-menu--link active" href="javascript:void(0)" data-app="settings"><i class="fa fa-cog"></i></a></li>
+              <li class="main-menu--item"><a class="main-menu--link" href="javascript:void(0)" data-app="calendar"><i class="fa fa-calendar-o"></i></a></li>
+              <li class="main-menu--item"><a data-app="calculator" class="main-menu--link" href="javascript:void(0)"><i class="fa fa-calculator" ></i></a></li>
+              <li class="main-menu--item"><a data-app="terminal" class="main-menu--link" href="javascript:void(0)"><i class="fa fa-terminal" ></i></a></li>
+            </ul>
+          </nav>
+        </section>
+        <!-- /Menu Bar -->
+      </main>
+      <script href="script.js">
+
+      </script>
 </body>
 </html>
