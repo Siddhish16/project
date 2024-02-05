@@ -1,161 +1,21 @@
-/* style.module.css */
-
-/* .main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 6rem;
-    min-height: 100vh; 
-  } */
-  
-  /* .window{
-    position: relative;
-    text-align: center;
-    justify-content: center; */
-    /* width: 90%;
-    height: 300px; */
-    /* border: 1px solid #afaeae;
-    border-radius: 8px;
-    overflow: hidden;
-    min-width: 10%;
-    min-height: 10%;
-    margin:5%;
-    box-shadow: #afaeae;
-   
-    } */
-
-
-
-
-
-
-
-
-
-
-
-    
-    /* .pane {
-      
-      border: 2px solid #ddd;
-      resize: both;
-      overflow: auto;
-      min-width: 10%;
-      min-height: 30%;
-      
-      width: var(--width);
-      height: var(--height);
-      
-      }
-
-      .titleBar{
-      display:flex;
-      justify-content: flex-end;
-      padding: 8px;
-      background-color: #ffffff;
-      border-bottom: 1px solid #ccc;
-      margin-right: 10px;
-      }
-
-      .upwardArrow,
-      .closeButton{
-      background-color: transparent;
-      border: none;
-      color: #333;
-      cursor: pointer;
-      font-size: 16px;
-      }
-
-      .upwardArrow:hover,
-      .closeButton:hover{
-      color:#555;
-      }
-      
-      .content{
-      padding: 12px;
-      }
-   
-   */
-
-
-
-
-
-
-
-
-
-
-
-   
-    /* .pane {
-      
-      border: 2px solid #ddd;
-      resize: both;
-      overflow: auto;
-      min-width: 10%;
-      min-height: 30%;
-      margin:10px;
-      width: var(--width);
-      height: var(--height);
-      
-      }
-
-      .titleBar{
-      display:flex;
-      justify-content: flex-end;
-      padding: 8px;
-      background-color: #f0f0f0;
-      }
-
-      .upwardArrow,
-      .closeButton{
-      background-color: transparent;
-      border: none;
-      color: #333;
-      cursor: pointer;
-      font-size: 16px;
-      }
-
-      .upwardArrow:hover,
-      .closeButton:hover{
-        background-color: #8d8d8d;
-      color:rgb(8, 0, 0);
-      }
-      
-      .content{
-      padding: 12px;
-      }
-    */
-  
-
-
-
-
-   
-
-
-
+/* 
     .fullBox{
       height: var(--height);
       width: var(--width);
       background-color: white;
-      /* resize: both; */
-      /* overflow: auto; */
+      resize: both;
+      overflow: auto;
       min-width: 10%;
       min-height: 10%;
       margin: 10px;
       border: 2px solid black;
     
-  }
+  } 
   .fullBox1{
-      height: 5%;
+      height: 10px;
       width: var(--width);
       background-color: rgb(226, 212, 212);
-      /* resize: both;
-      overflow: auto; */
-      min-width: 10%;
-      min-height: 4%;
+      min-height: 10px;
       margin: 10px;
       border: 2px solid black;
   }
@@ -169,10 +29,11 @@
       background-color: rgb(226, 212, 212);
       display: flex;
       justify-content: flex-end;  
+      height: 30px;
   }
 
   .heading:hover {
-    cursor: grabbing; /* Change the cursor to grabbing when hovered */
+    cursor: grabbing; 
   }
   
   .arrowButton{
@@ -191,3 +52,172 @@
       font-size: 16px;
       margin: 2px;
   }
+
+
+
+
+.bottomMenuBar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px; 
+  background-color: #ddd; 
+  width: 100%; 
+}
+ */
+
+
+
+
+
+
+
+
+
+
+/* ResizableCollapsiblePane.css */
+
+/* .resizableCollapsiblePane {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.titleBar {
+  background-color: #491c1c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  user-select: none;
+  border-bottom: 1px solid #090202;
+  margin:5px 5px 0px 5px;
+}
+
+.title {
+  margin-right: auto; 
+}
+
+.buttons {
+  display: flex;
+  gap: 8px; 
+}
+
+.buttons button {
+  cursor: pointer;
+}
+
+.content {
+  padding: 10px;
+}
+
+.resizer {
+  width: 10px;
+  height: 100%;
+  background-color: #ddd;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: ew-resize;
+}
+
+.expanded {
+  transition: all 0.3s ease-in-out;
+}
+
+.collapsed {
+  width: 60px; 
+} */
+
+
+
+
+
+
+
+
+
+
+
+.fullBox{
+  height: var(--height);
+  width: var(--width);
+  background-color: white;
+  resize: both;
+  overflow: hidden;
+  min-width: 10%;
+  min-height: 10%;
+  margin: 10px;
+  border: 2px solid black;
+  }
+  .fullBox1{
+  height: 40px !important;
+  width: var(--width);
+  background-color: rgb(226, 212, 212);
+  /* resize: both;
+  overflow: auto; */
+  /* min-width: 10%;
+  min-height: 4%; */
+  margin: 10px;
+  border: 2px solid black;
+  }
+  .content {
+  
+  padding: 12px;
+  width: 100%;
+  height: 88%;
+  }
+  .heading{
+  background-color: rgb(226, 212, 212);
+  display: flex;
+  justify-content: flex-end;
+  /* padding: 1%; */
+  height: 40px;
+  }
+  .heading:hover {
+  cursor: grabbing; /* Change the cursor to grabbing when hovered */
+  }
+  .arrowButton{
+  background-color: transparent;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 2px;
+  }
+  .closeButton{
+  background-color: transparent;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 2px;
+  }
+  
+  .bottomMenuBar{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+  background-color: #ddd;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  margin-top: 50px;
+  }
+
+
+
+
+
+
+
+
+
+
+

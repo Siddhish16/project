@@ -1,97 +1,153 @@
-// ./app\page.js
-// import { useClient } from 'next/client';
-
-// const Home = () => {
-//   // Mark the parent component as a client component
-//   useClient();
-
-//   return (
-//     <main>
-//       <div className={styles.grid}>
-//         <div className={styles.gridItem}>
-//           <Pane />
-//         </div>
-//         <div className={styles.gridItem}>
-//           <Pane />
-//         </div>
-//         <div className={styles.gridItem}>
-//           <Pane />
-//         </div>
-//         <div className={styles.gridItem}>
-//           <Pane />
-//         </div>
-//       </div>
-//     </main>
-//   );
-// }
-
-// export default Home;
-
-// import Pane from "./Components/pane";
+// "use client";
+// import React, { useState } from "react";
+// import Image from "next/image";
 // import styles from "./page.module.css";
-
-// export default function Home() {
-//   return (
-//     <main>
-//       <div className={styles.grid}>
-//         <div className={styles.gridItem1}>
-//           {" "}
-//           <Pane title="Pane 1" width="20%" height="100%" />
-//         </div>
-//         <div className={styles.gridItem2}>
-//           {" "}
-//           <Pane title="Pane 2" width="100%" height="100%" />
-//         </div>
-//         <div className={styles.gridItem3}>
-//           {" "}
-//           <Pane title="Pane 3" width="100%" height="100%" />
-//         </div>
-//         <div className={styles.gridItem4}>
-//           {" "}
-//           <Pane title="Pane 4" width="100%" height="100%" />
-//         </div>
-//       </div>
-//     </main>
-//   );
-// }
-
-
-
-// pages/page.js
-
-// import React from 'react'; 
-// import Pane from './Components/pane';
-// import styles from './page.module.css';
+// import Pane from "./Components/pane";
+// import BottomMenuBar from "./Components/menu";
 
 // const Page = () => {
+//   const [visiblePanes, setVisiblePanes] = useState([true, true, true, true]);
+//   const handleMenuBarButtonClick = (buttonIndex) => {
+//     const updatedVisiblePanes = [...visiblePanes];
+//     updatedVisiblePanes[buttonIndex - 1] =
+//       !updatedVisiblePanes[buttonIndex - 1];
+//     setVisiblePanes(updatedVisiblePanes);
+//   };
+//   const handleClosePane = (paneTitle) => {
+//     const paneIndex = parseInt(paneTitle.split(" ")[1], 10) - 1;
+//     const updatedVisiblePanes = [...visiblePanes];
+//     updatedVisiblePanes[paneIndex] = false;
+//     setVisiblePanes(updatedVisiblePanes);
+//   };
+//   const handleToggleContent = (paneIndex) => {
+//     setActivePane(activePane === paneIndex ? null : paneIndex);
+//     const updatedVisiblePanes = visiblePanes.map(
+//       (_, index) => index === paneIndex
+//     );
+//     setVisiblePanes(updatedVisiblePanes);
+//   };
 //   return (
-    
-//     <div className={styles.container}>
-//       <Pane width="47%" height="42%"/>
-//       <Pane width="47%" height="42%"/>
-//       <Pane width="47%" height="42%"/>
-//       <Pane width="47%" height="42%"/>
-      
+//     <div className={styles.whole}>
+//       <div className={styles.main}>
+//         {visiblePanes[0] && (
+//           <Pane
+//             title="Pane 1"
+//             width="45%"
+//             height="43%"
+//             onClose={handleClosePane}
+//             onToggleContent={() => handleToggleContent(0)}
+//           />
+//         )}
+//         {visiblePanes[1] && (
+//           <Pane
+//             title="Pane 2"
+//             width="45%"
+//             height="43%"
+//             onClose={handleClosePane}
+//             onToggleContent={() => handleToggleContent(0)}
+//           />
+//         )}
+//         {visiblePanes[2] && (
+//           <Pane
+//             title="Pane 3"
+//             width="45%"
+//             height="43%"
+//             onClose={handleClosePane}
+//             onToggleContent={() => handleToggleContent(0)}
+//           />
+//         )}
+//         {visiblePanes[3] && (
+//           <Pane
+//             title="Pane 4"
+//             width="45%"
+//             height="43%"
+//             onClose={handleClosePane}
+//             onToggleContent={() => handleToggleContent(0)}
+//           />
+//         )}
+//       </div>
+//       <BottomMenuBar onButtonClick={handleMenuBarButtonClick} />
 //     </div>
-    
 //   );
 // };
 
 // export default Page;
 
 
+// pages/index.js
+'use client';
+import React, { useState } from 'react';
+import Pane from './components/pane';
+import BottomMenuBar from './components/menu';
+import Graph from './components/graph';  // Import the Graph component
+import styles from './page.module.css';
 
-import Image from "next/image";
-import styles from "./page.module.css";
-import Pane from "./components/pane";
-export default function Home() {
-  return (
-    <main className={styles.main}>
-      <Pane width="45%" height="43%" />
-      <Pane width="45%" height="43%"/>
-      <Pane width="45%" height="43%"/>
-      <Pane width="45%" height="43%"/>
-      
-    </main>
-  );
-}
+const Page = () => {
+    const [visiblePanes, setVisiblePanes] = useState([true, true, true, true]);
+    const [activePane, setActivePane] = useState(null);
+
+    const handleMenuBarButtonClick = (buttonIndex) => {
+        const updatedVisiblePanes = [...visiblePanes];
+        updatedVisiblePanes[buttonIndex - 1] = !updatedVisiblePanes[buttonIndex - 1];
+        setVisiblePanes(updatedVisiblePanes);
+    };
+
+    const handleClosePane = (paneTitle) => {
+        const paneIndex = parseInt(paneTitle.split(' ')[1], 10) - 1;
+        const updatedVisiblePanes = [...visiblePanes];
+        updatedVisiblePanes[paneIndex] = false;
+        setVisiblePanes(updatedVisiblePanes);
+    };
+
+    const handleToggleContent = (paneIndex) => {
+        setActivePane(activePane === paneIndex ? null : paneIndex);
+        const updatedVisiblePanes = visiblePanes.map((_, index) => index === paneIndex);
+        setVisiblePanes(updatedVisiblePanes);
+    };
+
+    return (
+        <div className={styles.whole}>
+            <div className={styles.main}>
+                {visiblePanes[0] && (
+                    <Pane
+                        title="Pane 1"
+                        width="25%"
+                        height="80%"
+                        onClose={handleClosePane}
+                        onToggleContent={() => handleToggleContent(0)}
+                    />
+                )}
+                {visiblePanes[1] && (
+                    <Pane
+                        title="Pane 2"
+                        width="65%"
+                        height="80%"
+                        onClose={handleClosePane}
+                        onToggleContent={() => handleToggleContent(1)}
+                    />
+                )}
+                {visiblePanes[2] && (
+                    <Pane
+                        title="Pane 3"
+                        width="45%"
+                        height="43%"
+                        onClose={handleClosePane}
+                        onToggleContent={() => handleToggleContent(2)}
+                    />
+                )}
+                {visiblePanes[3] && (
+                    <Pane
+                        title="Pane 4"
+                        width="45%"
+                        height="43%"
+                        onClose={handleClosePane}
+                        onToggleContent={() => handleToggleContent(3)}
+                    />
+                )}
+            </div>
+            <BottomMenuBar onButtonClick={handleMenuBarButtonClick} />
+        </div>
+    );
+};
+
+export default Page;
